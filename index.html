@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nekobox使用代理步骤</title>
+    </head>
+    <body>
+        <div id="content"></div>
+        <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+        <script type="module">
+            // const url = 'https://github.com/JuTemp/nekobox-import-sub-tutorial/blob/main/README.md?raw=true'
+            const url = 'https://p.tyu.im/github.com/JuTemp/nekobox-import-sub-tutorial/blob/main/README.md?raw=true'
+            const markdown = await (await fetch(url)).text();
+            document.getElementById("content").innerHTML = marked.parse(markdown);
+        </script>
+    </body>
+</html>
